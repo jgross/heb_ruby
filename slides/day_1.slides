@@ -1,0 +1,169 @@
+h1. Program day 1:
+
+* 8:30 - 9:15 Introduction to the course
+* 9:30 - 10:15 Mac + Tools
+* 10:30 - 11:15 Ruby I 
+** Complied Vs. Interpreted Languages.
+** variables (local, instance, class variables) 
+** objects
+** methods
+** loops & constructs
+** string class
+** numbers 
+* 11:30 - 13:00 Mac Practice + Ruby
+
+h1. The Mac Mini
+
+* Made by Apple
+* OSX leopard installed. 
+* Comes installed with Ruby 
+* Can Run Windows xp 
+
+h1. OSX:
+
+* The Dock:
+!images/dock.jpg!
+* The dock shows all the working application, and can serve as quick lunch to frequently used apps
+* You can drag items to the dock. 
+* Each program running on the dock gets a small blue icon on the bottom
+
+h1. The Finder:
+
+* !images/finder.jpg!
+* always open
+* shows the file system 
+* use to create folders 
+* move / delete files
+* open an application (dbl-click)
+
+h1. Keyboard Short-Cuts:
+
+* &#8984;+N open a new document
+* &#8984;+Q close a program 
+* &#8984;+M Minimize
+*   
+
+h1. Important Apps:
+
+* Finder 
+* !images/terminal.jpg! Terminal
+* !images/textmate.jpg! TextMate
+* !images/firefox.jpg! FireFox
+* (ie)
+
+h1. OSX Walk through + Break
+
+h1. Introduction to Ruby 
+
+* First let's fire app the console
+* type irb
+* "irb" stands for interactive ruby
+* type the following program
+
+:inlinecode lang=ruby  
+    puts "Hello World!"   
+:endinlinecode 
+
+* this was your first and obvious ruby program. 
+* it includes only one statement. 
+* ruby is an interpreted language 
+* irb is the ruby interactive interpreter
+
+h1. Complied Vs. Interpreted languages 
+
+* It's all about run-time 
+* run-time is when the computer program executes
+* In complied languages (C,C++,.NET) after writing the code
+  the complier translates the code into native machine code
+  _Execution time is fast_ , _Development time is slower_ 
+* In interpreted langue (LISP, SmallTalk, Ruby) the code written 
+  Is being translated in run-time , no compliation step is required
+  _Fast Development_ , _Slower performance_
+* read more on "wikipedia":http://en.wikipedia.org/wiki/Interpreted_language
+
+h1. Running a ruby program
+
+* We typed our first program , this does not mean that we need to type the program into irb each time we want to execute it.
+* open up textMate
+* put the following lines into a new file
+* save this document under /documents/course/session_1/simple.rb
+
+:inlinecode lang=ruby  
+#!/usr/local/bin/ruby
+#first ruby program
+puts "hello ruby"
+:endinlinecode
+
+* open the console and navigate to the /documents/course/session_1 directory
+* type ruby simple.rb
+* you can change the type of file to make it an executable :
+* chmod +x simple.rb
+* now just type: simple.rb
+* the first line (shebang line) instructs the operating system how to make this file work. 
+
+h1. Ruby Variables
+
+* The time machine ruby program (example)
+** We need a program to go back in time
+** We want to be able to know what was the time / date three days ago
+** First thing we need to do is to store the current time as a referance point
+* We store data in variables. 
+* There are three types of ruby variables :
+** Local variables
+** Instance variables
+** Class variables
+* The only differences is the scope and the availability of these variable in the life of the program
+
+h1. Time Machine - local variables
+
+:code code/Examples/day_1/time_machine_1.rb
+
+* time is a local variable, we can use it only in the scope of the method (local scope)
+
+h1. Time Machine - local variables
+
+:code code/Examples/day_1/time_machine_2.rb
+* cannot use it outside of the method
+ 
+h1. Local Variables
+
+* In ruby local variables begin with a lowercase letter or an underscore (_)
+* "time" or "_time" are valid names for local variables. 
+
+h1. Time Machine - Instance Variables
+
+* a variable which is associated with the instance of a class 
+* (we will talk about classes and instance of a class shortly)
+* you can access this variable at any point in the scope of the class. 
+
+:code code/Examples/day_1/time_machine_3.rb
+
+h1. Time Machine - class variables
+
+* What happens when we try to , will this print ?
+
+:code code/Examples/day_1/time_machine_4.rb
+
+h1. Time Machine - class variables II
+
+* no.
+* !images/scope.jpg!
+* we are trying to access an instance variable from the scope of the class.
+* instance variable can be defined also in the scope of a class (but we will get to that in a later session)
+
+h1. Class Variables
+
+* class variables are defined in the level of the class
+* they do not require an instance of a class to be defined
+
+:code code/Examples/day_1/time_machine_5.rb
+
+h1. Global Variables.
+
+* We do not usually use global variables
+* they are defined with a $ sign at the beginning of the variable name
+
+h1. Constants
+
+* Constant represent a variable which cannot change during the ru
+

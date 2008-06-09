@@ -1,0 +1,165 @@
+h1. Program day 2: Ruby + Testing
+
+* 8:30 - 9:15 Ruby II
+** Arrays / Hash
+** Code blocks
+** Classes + Inheritance 
+** mixins / modules / namespaces
+* 9:30 - 10:15 Testing Framework - RSPEC
+* 10:30 - 11:15 ...
+* 11:30 - 13:00 RSPEC + Ruby practice 
+
+h1. good morning class
+
+:code code/Examples/day_2/course_0.rb
+
+h1. Ruby Arrays
+ 
+* Start with an example, let's write a program to store grades 
+  we can do it like this :
+
+:code code/Examples/day_2/course_1.rb
+
+h1. Ruby Arrays
+
+* The problem we need more flexibility, we want to be able to look at all the grades
+  manipulate them we want to have a !data structure
+* let's look at it using an array
+
+:code code/Examples/day_2/course_2.rb
+
+h1. Ruby Array Class 
+
+* We use arrays to store items
+* The usual example is a drawer 
+* Arrays in different languages can do different things. 
+* In Java Arrays is a homogeneous collection of data
+  it has a finite (or limited amount of space)
+* Ruby takes a different approach
+  arrays are dynamic, they can store multiple different items
+* you don't need to decide in advance the array size
+* you don't need to decide which type of object the array is going to accept
+
+
+h1. Ruby Array 
+
+* Each element in the array is associated with an index
+* You can retrieve or store items based on their index  
+
+h1. Array basics
+
+* to define an array 
+
+:code code/Examples/day_2/array_basics.rb[basics]
+
+* To add an item to an array 
+
+:code code/Examples/day_2/array_basics.rb[add]
+
+h1. Array basics adding items (cont.)
+
+* You can create arrays with initialized values 
+
+:code code/Examples/day_2/months.rb
+
+h1. Arrays basics adding items (cont.)
+
+* If the array is only strings you can use the %w operator
+
+:code code/Examples/day_2/array_basics.rb[months]
+
+* To remove an item from the array
+
+:code code/Examples/day_2/array_basics.rb[remove]
+
+h1. Accessing arrays items
+
+* you can access the items in the array by using their index
+
+h1. Iterating over an array
+
+:code code/Examples/day_2/array_basics.rb[iterations]
+
+* Anther way to iterate an array - using *blocks*	
+
+:code code/Examples/day_2/array_basics.rb[iter_blocks]
+
+* More about blocks later on.
+
+h1. Joining two arrays
+
+* how can you join more then one array:
+
+:code code/Examples/day_2/array_basics.rb[array_merge]
+
+h1. What happens if ?
+
+* what happens if you do the following ??
+
+:code code/Examples/day_2/array_example_1.rb
+
+
+h1. Ruby Array (cont.)
+
+* => [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1]
+
+* IndexError: index -1 out of array
+        from (irb):3:in `[]='
+        from (irb):3
+
+h1. Courses and Grades. 
+
+* if I want to get an average on all the grades I have ?
+
+:code code/Examples/day_2/course_3.rb
+
+h1. Todo (Class Session #1):
+ 
+- Write a program that receives multiple grades from the users 
+- It will stop receiving an input when the grade entered is smaller than -1 
+- The output of this program should look like this :
+  Your highest grade is  ***
+  Your lowest grade is ***
+  Your average grade is ***
+
+h1. Hash
+
+* A hash is a different data structure 
+* Instead of assigning each object stored in the collection an index
+  in a hash you define a key
+* key - value pair is an element in the hash
+* keys must be unique
+
+h1. An Example
+
+:code code/Examples/day_2/hash_basics.rb[person_hash]
+
+h1. Hash operations
+
+* Get all the keys / values of the hash
+
+:code code/Examples/day_2/hash_basics.rb[hash_keys]
+
+h1. Blocks. 
+
+* In ruby you certain methods can except a block of code as an argument
+* we saw earlier that an Array object has an 'each' method which can accept a block. 
+
+:code code/Examples/day_2/block_simple.rb
+
+
+h1. Ruby Classes Objects and Inheritance
+
+* Ruby is object oriented. 
+* *Everything* is an object
+* There are no primitive types (irb) 5.class to see
+* This means that every object in ruby has a base class and methods that I can respond to
+
+h1. The AirLine example
+
+* Plane
+* Planes
+* Destination 
+* Departure
+* Places
+

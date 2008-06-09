@@ -1,0 +1,51 @@
+h1. Course Outline
+
+h1. Program day 1:
+
+* 8:30 - 9:15 Introduction to the course
+* 9:30 - 10:15 Mac + Tools
+* 10:30 - 11:15 Ruby I 
+** Complied Vs. Interpreted Languages.
+** variables (local, instance, class variables) 
+** objects
+** methods
+** loops & constructs
+** string class
+** numbers 
+* 11:30 - 13:00 Mac Practice + Ruby
+
+h1. Program day 2: Ruby + Testing
+
+* 8:30 - 9:15 Ruby II
+** Arrays / Hash
+** Code blocks
+** Classes + Inheritance 
+** mixins / modules / namespaces
+* 9:30 - 10:15 Testing Framework - RSPEC
+* 10:30 - 11:15 ...
+* 11:30 - 13:00 RSPEC + Ruby practice 
+
+h1. Program day 3: Introduction to Rails
+
+* 8:30 - 9:15 Introduction to Rails
+* 9:30 - 10:15 MVC (Model View Controller)
+* 10:30 - 11:15 Simple rails program example
+* 11:30 - 13:00 Practice: Your own Rails Application. 
+
+h1. Program day 4: Active Record day
+
+* 8:30 - 9:15 Active Record basics
+** MySQL Database and ORM
+** associations between models. 
+* 9:30 - 10:15 Cont.
+* 10:30 - 11:15 Routs + REST
+* 11:30 - 13:00 Practice: associations
+
+h1. Program day 5: Advanced topics
+
+* Active Record associations Habtm , many-to-many
+* Ruby IO
+* Ruby Gems
+* RSPEC & Rails. 
+
+back to the "toc":table_of_contents.html

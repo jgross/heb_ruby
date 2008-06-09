@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>The TriBase RoR course</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050728" />
+<meta name="author" content="Jonathan Gross" />
+<meta name="company" content="BiolData ltd." />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../lib/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+
+<link rel="stylesheet" href="../lib/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright &copy; 2008 Jonathan Gross</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+<div class="slide">
+
+	<h1>Program day 2: Ruby + Testing</h1>
+
+
+	<ul>
+	<li>8:30 &#8211; 9:15 Ruby II
+	<ul>
+	<li>Arrays / Hash</li>
+		<li>Code blocks</li>
+		<li>Classes + Inheritance </li>
+		<li>mixins / modules / namespaces</li>
+	</ul>
+	</li>
+		<li>9:30 &#8211; 10:15 Testing Framework &#8211; <span class="caps">RSPEC</span></li>
+		<li>10:30 &#8211; 11:15 &#8230;</li>
+		<li>11:30 &#8211; 13:00 <span class="caps">RSPEC</span> + Ruby practice</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>good morning class</h1>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">3.times { print "Good morning; " }</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/course_0.rb">code/Examples/day_2/course_0.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Ruby Arrays</h1>
+
+
+	<ul>
+	<li>Start with an example, let&#8217;s write a program to store grades 
+  we can do it like this :</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">course_1 = 90
+course_2 = 80
+course_3 = 87
+course_4 = 95
+
+avarage = (course_1 + course_2 + course_3 + course_4) / 4
+puts avarage
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/course_1.rb">code/Examples/day_2/course_1.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Ruby Arrays</h1>
+
+
+	<ul>
+	<li>The problem we need more flexibility, we want to be able to look at all the grades
+  manipulate them we want to have a !data structure</li>
+		<li>let&#8217;s look at it using an array</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">courses = []
+courses[0] = 90
+courses[1] = 80
+courses[2] = 87
+courses[3] = 95
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/course_2.rb">code/Examples/day_2/course_2.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Ruby Array Class</h1>
+
+
+	<ul>
+	<li>We use arrays to store items</li>
+		<li>The usual example is a drawer </li>
+		<li>Arrays in different languages can do different things. </li>
+		<li>In Java Arrays is a homogeneous collection of data
+  it has a finite (or limited amount of space)</li>
+		<li>Ruby takes a different approach
+  arrays are dynamic, they can store multiple different items</li>
+		<li>you don&#8217;t need to decide in advance the array size</li>
+		<li>you don&#8217;t need to decide which type of object the array is going to accept</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Ruby Array</h1>
+
+
+	<ul>
+	<li>Each element in the array is associated with an index</li>
+		<li>You can retrieve or store items based on their index</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Array basics</h1>
+
+
+	<ul>
+	<li>to define an array</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">
+array = []
+# or 
+array = Array.new
+
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/array_basics.rb">code/Examples/day_2/array_basics.rb</a></div>
+
+	<ul>
+	<li>To add an item to an array</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">
+arr = []
+arr &lt;&lt; 1
+arr &lt;&lt; 2
+arr
+#=&gt; [1,2]
+
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/array_basics.rb">code/Examples/day_2/array_basics.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Array basics adding items (cont.)</h1>
+
+
+	<ul>
+	<li>You can create arrays with initialized values</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+months.size
+#=&gt;12</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/months.rb">code/Examples/day_2/months.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Arrays basics adding items (cont.)</h1>
+
+
+	<ul>
+	<li>If the array is only strings you can use the %w operator</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">months = %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec]
+months.size
+#=&gt;12
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/array_basics.rb">code/Examples/day_2/array_basics.rb</a></div>
+
+	<ul>
+	<li>To remove an item from the array</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">
+arr = [1,2,3] #this is another way to create and intialize an array
+arr
+#=&gt; [1,2,3]
+arr.delete(1)
+arr
+#=&gt; [2,3]
+
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/array_basics.rb">code/Examples/day_2/array_basics.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Accessing arrays items</h1>
+
+
+	<ul>
+	<li>you can access the items in the array by using their index</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Iterating over an array</h1>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">for i in 1..12 do
+  print months[i] , " " 
+end
+
+
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/array_basics.rb">code/Examples/day_2/array_basics.rb</a></div>
+
+	<ul>
+	<li>Anther way to iterate an array &#8211; using <strong>blocks</strong></li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">
+months = %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec]
+months.each {|month| print month , " "}
+#we will talk more about blocks tommorow
+
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/array_basics.rb">code/Examples/day_2/array_basics.rb</a></div>
+
+	<ul>
+	<li>More about blocks later on.</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Joining two arrays</h1>
+
+
+	<ul>
+	<li>how can you join more then one array:</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">quarter_1 = [1000,2299,1443]
+quarter_2 = [1300,2480,1100]
+quarter_3 = [1300,2480,1100]
+quarter_4 = [1590,2280,1200]
+year = quarter_1 + quarter_2 + quarter_3 + quarter_4
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/array_basics.rb">code/Examples/day_2/array_basics.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>What happens if ?</h1>
+
+
+	<ul>
+	<li>what happens if you do the following ??</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">arr = []
+arr[40] = 1
+
+arr[-1] = 20</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/array_example_1.rb">code/Examples/day_2/array_example_1.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Ruby Array (cont.)</h1>
+
+
+	<ul>
+	<li>=&gt; [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1]</li>
+	</ul>
+
+
+	<ul>
+	<li>IndexError: index -1 out of array
+        from (irb):3:in `[]=&#8217;
+        from (irb):3</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Courses and Grades.</h1>
+
+
+	<ul>
+	<li>if I want to get an average on all the grades I have ?</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">courses = []
+courses[0] = 90
+courses[1] = 80
+courses[2] = 87
+courses[3] = 95
+
+courses.sort
+courses &lt;&lt; 100
+courses &lt;&lt; 62
+puts courses</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/course_3.rb">code/Examples/day_2/course_3.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Todo (Class Session #1):</h1>
+
+
+	<p>- Write a program that receives multiple grades from the users 
+- It will stop receiving an input when the grade entered is smaller than -1 
+- The output of this program should look like this :
+  Your highest grade is  <b>*
+  Your lowest grade is <strong></b>
+  Your average grade is *</strong>*</p>
+
+
+</div>
+<div class="slide">
+
+	<h1>Hash</h1>
+
+
+	<ul>
+	<li>A hash is a different data structure </li>
+		<li>Instead of assigning each object stored in the collection an index
+  in a hash you define a key</li>
+		<li>key &#8211; value pair is an element in the hash</li>
+		<li>keys must be unique</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>An Example</h1>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">def print_person( person = {})
+  print "#{person["title"]} #{person["first_name"]} #{person["last_name"]} lives in #{person["City"]}" 
+end
+
+person = Hash.new
+person["last_name"] = "Adam" 
+person["first_name"] = "Zvi" 
+person["title"] = "Dr." 
+person["City"] = "Hertzliya" 
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/hash_basics.rb">code/Examples/day_2/hash_basics.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Hash operations</h1>
+
+
+	<ul>
+	<li>Get all the keys / values of the hash</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">person = {"last_name" =&gt; "Adam", 
+          "first_name" =&gt; "Zvi",
+          "title" =&gt; "Dr.", 
+          "City" =&gt; "Hertzliya"}
+person.keys
+#=&gt; ["City", "title", "first_name", "last_name"]
+person.values
+#=&gt; ["Hertzliya", "Dr.", "Zvi", "Adam"]
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_2/hash_basics.rb">code/Examples/day_2/hash_basics.rb</a></div>
+
+</div>
+
+  <!-- Syntax Highlighter -->
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shCore.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushCpp.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushRuby.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+  <script language="javascript">
+  dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+  dp.SyntaxHighlighter.HighlightAll('code');
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>The TriBase RoR course</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050728" />
+<meta name="author" content="Jonathan Gross" />
+<meta name="company" content="BiolData ltd." />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../lib/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+
+<link rel="stylesheet" href="../lib/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright &copy; 2008 Jonathan Gross</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+<div class="slide">
+
+	<h1>Program day 1:</h1>
+
+
+	<ul>
+	<li>8:30 &#8211; 9:15 Introduction to the course</li>
+		<li>9:30 &#8211; 10:15 Mac + Tools</li>
+		<li>10:30 &#8211; 11:15 Ruby I 
+	<ul>
+	<li>Complied Vs. Interpreted Languages.</li>
+		<li>variables (local, instance, class variables) </li>
+		<li>objects</li>
+		<li>methods</li>
+		<li>loops &#38; constructs</li>
+		<li>string class</li>
+		<li>numbers </li>
+	</ul>
+	</li>
+		<li>11:30 &#8211; 13:00 Mac Practice + Ruby</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>The Mac Mini</h1>
+
+
+	<ul>
+	<li>Made by Apple</li>
+		<li><span class="caps">OSX</span> leopard installed. </li>
+		<li>Comes installed with Ruby </li>
+		<li>Can Run Windows xp</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1><span class="caps">OSX</span>:</h1>
+
+
+	<ul>
+	<li>The Dock:
+<img src="images/dock.jpg" alt="" /></li>
+		<li>The dock shows all the working application, and can serve as quick lunch to frequently used apps</li>
+		<li>You can drag items to the dock. </li>
+		<li>Each program running on the dock gets a small blue icon on the bottom</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>The Finder:</h1>
+
+
+	<ul>
+	<li><img src="images/finder.jpg" alt="" /></li>
+		<li>always open</li>
+		<li>shows the file system </li>
+		<li>use to create folders </li>
+		<li>move / delete files</li>
+		<li>open an application (dbl-click)</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Keyboard Short-Cuts:</h1>
+
+
+	<ul>
+	<li>&#8984;+N open a new document</li>
+		<li>&#8984;+Q close a program </li>
+		<li>&#8984;+M Minimize
+*</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Important Apps:</h1>
+
+
+	<ul>
+	<li>Finder </li>
+		<li><img src="images/terminal.jpg" alt="" /> Terminal</li>
+		<li><img src="images/textmate.jpg" alt="" /> TextMate</li>
+		<li><img src="images/firefox.jpg" alt="" /> FireFox</li>
+		<li>(ie)</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1><span class="caps">OSX</span> Walk through + Break</h1>
+
+
+</div>
+<div class="slide">
+
+	<h1>Introduction to Ruby</h1>
+
+
+	<ul>
+	<li>First let&#8217;s fire app the console</li>
+		<li>type irb</li>
+		<li>&#8220;irb&#8221; stands for interactive ruby</li>
+		<li>type the following program</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">
+
+    puts "Hello World!"   
+</pre></div>
+
+	<ul>
+	<li>this was your first and obvious ruby program. </li>
+		<li>it includes only one statement. </li>
+		<li>ruby is an interpreted language </li>
+		<li>irb is the ruby interactive interpreter</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Complied Vs. Interpreted languages</h1>
+
+
+	<ul>
+	<li>It&#8217;s all about run-time </li>
+		<li>run-time is when the computer program executes</li>
+		<li>In complied languages (C,C++,.NET) after writing the code
+  the complier translates the code into native machine code
+  <em>Execution time is fast</em> , <em>Development time is slower</em> </li>
+		<li>In interpreted langue (LISP, SmallTalk, Ruby) the code written 
+  Is being translated in run-time , no compliation step is required
+  <em>Fast Development</em> , <em>Slower performance</em></li>
+		<li>read more on <a href="http://en.wikipedia.org/wiki/Interpreted_language">wikipedia</a></li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Running a ruby program</h1>
+
+
+	<ul>
+	<li>We typed our first program , this does not mean that we need to type the program into irb each time we want to execute it.</li>
+		<li>open up textMate</li>
+		<li>put the following lines into a new file</li>
+		<li>save this document under /documents/course/session_1/simple.rb</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">
+
+#!/usr/local/bin/ruby
+#first ruby program
+puts "hello ruby" 
+</pre></div>
+
+	<ul>
+	<li>open the console and navigate to the /documents/course/session_1 directory</li>
+		<li>type ruby simple.rb</li>
+		<li>you can change the type of file to make it an executable :</li>
+		<li>chmod +x simple.rb</li>
+		<li>now just type: simple.rb</li>
+		<li>the first line (shebang line) instructs the operating system how to make this file work.</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Ruby Variables</h1>
+
+
+	<ul>
+	<li>The time machine ruby program (example)
+	<ul>
+	<li>We need a program to go back in time</li>
+		<li>We want to be able to know what was the time / date three days ago</li>
+		<li>First thing we need to do is to store the current time as a referance point</li>
+	</ul>
+	</li>
+		<li>We store data in variables. </li>
+		<li>There are three types of ruby variables :
+	<ul>
+	<li>Local variables</li>
+		<li>Instance variables</li>
+		<li>Class variables</li>
+	</ul>
+	</li>
+		<li>The only differences is the scope and the availability of these variable in the life of the program</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Time Machine &#8211; local variables</h1>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">class TimeMachine
+  def initialize
+    time = Time.now
+    puts time
+  end
+end
+TimeMachine.new</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_1/time_machine_1.rb">code/Examples/day_1/time_machine_1.rb</a></div>
+
+	<ul>
+	<li>time is a local variable, we can use it only in the scope of the method (local scope)</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Time Machine &#8211; local variables</h1>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">class TimeMachine
+  def initialize
+    time = Time.now
+  end
+  puts time
+  #this will cause a NameError
+  #time_machine.rb:5: 
+  #undefined local variable or method `time' for TimeMachine:Class (NameError)
+end
+TimeMachine.new</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_1/time_machine_2.rb">code/Examples/day_1/time_machine_2.rb</a></div>
+
+	<ul>
+	<li>cannot use it outside of the method</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Local Variables</h1>
+
+
+	<ul>
+	<li>In ruby local variables begin with a lowercase letter or an underscore (_)</li>
+		<li>&#8220;time&#8221; or &#8220;_time&#8221; are valid names for local variables.</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Time Machine &#8211; Instance Variables</h1>
+
+
+	<ul>
+	<li>a variable which is associated with the instance of a class </li>
+		<li>(we will talk about classes and instance of a class shortly)</li>
+		<li>you can access this variable at any point in the scope of the class.</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">class TimeMachine
+  def initialize
+    @time = Time.now
+  end
+
+  def show_the_time
+    puts @time
+  end
+  
+  #this will work but 
+end
+t = TimeMachine.new
+t.show_the_time</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_1/time_machine_3.rb">code/Examples/day_1/time_machine_3.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Time Machine &#8211; class variables</h1>
+
+
+	<ul>
+	<li>What happens when we try to , will this print ?</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">class TimeMachine
+  def initialize
+    @time = Time.now
+  end
+  puts @time
+  
+  #this will work but 
+end
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_1/time_machine_4.rb">code/Examples/day_1/time_machine_4.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Time Machine &#8211; class variables II</h1>
+
+
+	<ul>
+	<li>no.</li>
+		<li><img src="images/scope.jpg" alt="" /></li>
+		<li>we are trying to access an instance variable from the scope of the class.</li>
+		<li>instance variable can be defined also in the scope of a class (but we will get to that in a later session)</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Class Variables</h1>
+
+
+	<ul>
+	<li>class variables are defined in the level of the class</li>
+		<li>they do not require an instance of a class to be defined</li>
+	</ul>
+
+
+<div class="code-normal">
+
+<pre name="code" class="ruby:nogutter:nocontrols">class TimeMachine
+  time = Time.now
+  puts time
+end
+
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///DEVELOPMENT/git/codex_Ror/code/Examples/day_1/time_machine_5.rb">code/Examples/day_1/time_machine_5.rb</a></div>
+
+</div>
+<div class="slide">
+
+	<h1>Global Variables.</h1>
+
+
+	<ul>
+	<li>We do not usually use global variables</li>
+		<li>they are defined with a $ sign at the beginning of the variable name</li>
+	</ul>
+
+
+</div>
+<div class="slide">
+
+	<h1>Constants</h1>
+
+
+	<ul>
+	<li>Constant represent a variable which cannot change during the ru</div></li>
+	</ul>
+
+  <!-- Syntax Highlighter -->
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shCore.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushCpp.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushRuby.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+  <script language="javascript">
+  dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+  dp.SyntaxHighlighter.HighlightAll('code');
+  </script>
+</div>
+</body>
+</html>
